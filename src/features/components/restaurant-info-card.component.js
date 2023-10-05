@@ -57,7 +57,6 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
             <SvgXml xml={star} width={20} height={20} />
           ))}
         </Rating>
-
         <Address>{address}</Address>
       </Info>
     </RestaurantCard>
