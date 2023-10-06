@@ -27,7 +27,8 @@ const Info = styled.View`
 
 const Rating = styled.View`
   flex-direction: row;
-  padding: ${(props) => props.theme.space[2]};
+  padding-top: ${(props) => props.theme.space[2]};
+  padding-bottom: ${(props) => props.theme.space[2]};
 `;
 
 const Address = styled(Text)`
