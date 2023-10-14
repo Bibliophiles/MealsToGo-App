@@ -3,6 +3,7 @@ import styled from "styled-components/native";
 import { Card } from "react-native-paper";
 import { Text, Image } from "react-native";
 import { SvgXml } from "react-native-svg";
+import { Spacer } from "../../components/spacer/spacer.component";
 import star from "../../../assets/star";
 import open from "../../../assets/open";
 
@@ -44,7 +45,7 @@ const Section = styled.View`
 const SectionEnd = styled.View`
   flex: 1;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-end;
 `;
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
@@ -78,7 +79,9 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
                 CLOSED TEMPORARILY
               </Text>
             )}
+            <Spacer variant="left.medium" />
             {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
+            <Spacer variant="left.medium" />
             <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
           </SectionEnd>
         </Section>
