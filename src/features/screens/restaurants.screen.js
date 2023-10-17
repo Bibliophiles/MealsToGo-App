@@ -42,6 +42,7 @@ export const RestaurantsScreen = () => {
           </Spacer>
         )}
         keyExtractor={(item) => item.name}
+        // eslint-disable-next-line react-native/no-inline-styles
         contentContainerStyle={{ padding: 16 }}
       />
     </SafeArea>
