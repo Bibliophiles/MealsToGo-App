@@ -6,6 +6,7 @@ import { RestaurantInfoCard } from "../components/restaurant-info-card.component
 import { Spacer } from "../../components/spacer/spacer.component";
 
 const SafeArea = styled(SafeAreaView)`
+  flex: 1;
   ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
 `;
 
