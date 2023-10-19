@@ -24,14 +24,12 @@ const TAB_ICON = {
   Settings: "md-settings",
 };
 
-const tabBarIcon =
-  (iconName) =>
-  ({ size, color }) => <Ionicons name={iconName} size={size} color={color} />;
-
 const createScreenOptions = ({ route }) => {
   const iconName = TAB_ICON[route.name];
   return {
-    tabBarIcon: tabBarIcon(iconName),
+    tabBarIcon: ({ size, color }) => (
+      <Ionicons name={iconName} size={size} color={color} />
+    ),
     headerShown: false,
     tabBarActiveTintColor: "tomato",
     tabBarInactiveTintColor: "gray",
