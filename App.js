@@ -16,6 +16,7 @@ import { RestaurantsScreen } from "./src/features/screens/restaurants.screen";
 import { MapScreen } from "./src/features/screens/map.screen";
 import { SettingsScreen } from "./src/features/screens/settings.screen";
 
+import { restaurantsRequest } from "./src/services/restaurants/restaurants.service";
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
