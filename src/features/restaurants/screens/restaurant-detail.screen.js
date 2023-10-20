@@ -21,7 +21,8 @@ export const RestaurantDetailScreen = ({ route }) => {
           title="Breakfast"
           left={(props) => <List.Icon {...props} icon="bread-slice" />}
           expanded={breakfastExpanded}
-          onPress={() => setBreakfastExpanded(!breakfastExpanded)}>
+          onPress={() => setBreakfastExpanded(!breakfastExpanded)}
+        >
           <List.Item title="Indomie" />
           <List.Item title="Fufu w/ Groundnut" />
         </List.Accordion>
@@ -30,7 +31,8 @@ export const RestaurantDetailScreen = ({ route }) => {
           title="Lunch"
           left={(props) => <List.Icon {...props} icon="hamburger" />}
           expanded={lunchExpanded}
-          onPress={() => setLunchExpanded(!lunchExpanded)}>
+          onPress={() => setLunchExpanded(!lunchExpanded)}
+        >
           <List.Item title="Ghana Jollof" />
           <List.Item title="Banku" />
           <List.Item title="Mushroom Soup" />
@@ -40,7 +42,8 @@ export const RestaurantDetailScreen = ({ route }) => {
           title="Dinner"
           left={(props) => <List.Icon {...props} icon="food-variant" />}
           expanded={dinnerExpanded}
-          onPress={() => setDinnerExpanded(!dinnerExpanded)}>
+          onPress={() => setDinnerExpanded(!dinnerExpanded)}
+        >
           <List.Item title="Ampesi w/ Nkontomire" />
           <List.Item title="Spaghetti Bolognese" />
           <List.Item title="Steak Frities" />
@@ -50,7 +53,8 @@ export const RestaurantDetailScreen = ({ route }) => {
           title="Drinks"
           left={(props) => <List.Icon {...props} icon="cup" />}
           expanded={drinksExpanded}
-          onPress={() => setDrinksExpanded(!drinksExpanded)}>
+          onPress={() => setDrinksExpanded(!drinksExpanded)}
+        >
           <List.Item title="Kalypo" />
           <List.Item title="Coffee" />
           <List.Item title="Tea" />
