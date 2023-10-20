@@ -60,7 +60,8 @@ export const LocationContextProvider = ({ children }) => {
         location,
         search: onSearch,
         keyword,
-      }}>
+      }}
+    >
       {children}
     </LocationContext.Provider>
   );
