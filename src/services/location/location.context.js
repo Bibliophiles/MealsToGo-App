@@ -13,21 +13,44 @@ export const LocationContextProvider = ({ children }) => {
   const onSearch = (searchKeyword) => {
     setIsLoading(true);
     setKeyword(searchKeyword);
-    if (!searchKeyword.length) {
-      // don't do anything
+  };
+
+  useEffect(() => {
+    // Create a variable to track if the component is still mounted to avoid memory leaks.
+    let isMounted = true;
+
+    if (!keyword.length) {
+      // If the keyword is empty, reset the location and error.
+      setLocation(null);
+      setError(null);
+      setIsLoading(false);
       return;
     }
-    locationRequest(searchKeyword.toLowerCase())
+
+    locationRequest(keyword.toLowerCase())
       .then(locationTransform)
       .then((result) => {
-        setIsLoading(false);
-        setLocation(result);
+        if (isMounted) {
+          // Only update the state if the component is still mounted.
+          setIsLoading(false);
+          setLocation(result);
+          setError(null); // Reset any previous errors.
+        }
       })
       .catch((err) => {
-        setIsLoading(false);
-        setError(err);
+        if (isMounted) {
+          // Only update the state if the component is still mounted.
+          setIsLoading(false);
+          setLocation(null); // Reset the location on error.
+          setError(err);
+        }
       });
-  };
+
+    // Cleanup function to handle unmounting.
+    return () => {
+      isMounted = false;
+    };
+  }, [keyword]);
 
   return (
     <LocationContext.Provider
