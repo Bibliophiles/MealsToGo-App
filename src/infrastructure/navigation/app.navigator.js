@@ -3,9 +3,9 @@ import { Ionicons } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import { RestaurantsNavigator } from "./restaurants.navigation";
-import { MapScreen } from "../../features/screens/map.screen";
-import { SettingsScreen } from "../../features/screens/settings.screen";
+import { RestaurantsNavigator } from "./restaurants.navigator";
+import { MapScreen } from "../../features/restaurants/screens/map.screen";
+import { SettingsScreen } from "../../features/restaurants/screens/settings.screen";
 
 const Tab = createBottomTabNavigator();
 
