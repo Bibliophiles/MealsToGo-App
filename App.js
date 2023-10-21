@@ -41,7 +41,6 @@ export default function App() {
       const auth = getAuth();
       signInWithEmailAndPassword(auth, "dennis@gmail.com", "test123")
         .then((userCredential) => {
-          //console.log(userCredential);
           setIsAuthenticated(true);
         })
         .catch((error) => {
