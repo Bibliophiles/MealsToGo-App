@@ -1,6 +1,10 @@
 {
-    "extends": "@react-native-community",
-    "rules": {
-        "quotes": [2, "double", {"avoidEscape": true}]
-    }
+  "extends": [
+    "@react-native-community",
+    "eslint:recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "quotes": [2, "double", { "avoidEscape": true }]
+  }
 }
