@@ -9,15 +9,11 @@ import {
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 
-import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
-import { LocationContextProvider } from "./src/services/location/location.context";
-import { FavoritesContextProvider } from "./src/services/favorites/favorites.context";
 import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
 
 import { Navigation } from "./src/infrastructure/navigation";
 
 import { getApps, initializeApp } from "firebase/app";
-// import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -34,21 +30,6 @@ if (!getApps().length) {
 }
 
 export default function App() {
-  // const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     const auth = getAuth();
-  //     signInWithEmailAndPassword(auth, "dennis@gmail.com", "test123")
-  //       .then((userCredential) => {
-  //         setIsAuthenticated(true);
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   }, 2000);
-  // }, []);
-
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });
@@ -61,21 +42,11 @@ export default function App() {
     return null;
   }
 
-  // if (!isAuthenticated) {
-  //   return null;
-  // }
-
   return (
     <>
       <ThemeProvider theme={theme}>
         <AuthenticationContextProvider>
-          <FavoritesContextProvider>
-            <LocationContextProvider>
-              <RestaurantsContextProvider>
-                <Navigation />
-              </RestaurantsContextProvider>
-            </LocationContextProvider>
-          </FavoritesContextProvider>
+          <Navigation />
         </AuthenticationContextProvider>
       </ThemeProvider>
 
