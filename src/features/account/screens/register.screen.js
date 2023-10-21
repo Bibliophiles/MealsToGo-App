@@ -1,5 +1,7 @@
 import React, { useState, useContext } from "react";
 
+import { ActivityIndicator, MD2Colors } from "react-native-paper";
+
 import {
   AccountBackground,
   AccountCover,
@@ -59,14 +61,18 @@ export const RegisterScreen = ({ navigation }) => {
           </ErrorContainer>
         )}
 
-        <Spacer>
-          <AuthButton
-            icon="email"
-            mode="contained"
-            onPress={() => onRegister(email, password, repeatedPassword)}
-          >
-            Register
-          </AuthButton>
+        <Spacer size="large">
+          {!isLoading ? (
+            <AuthButton
+              icon="email"
+              mode="contained"
+              onPress={() => onRegister(email, password, repeatedPassword)}
+            >
+              Register
+            </AuthButton>
+          ) : (
+            <ActivityIndicator animating={true} color={MD2Colors.blue300} />
+          )}
         </Spacer>
       </AccountContainer>
       <Spacer size="large">
