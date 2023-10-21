@@ -39,9 +39,9 @@ export default function App() {
   useEffect(() => {
     setTimeout(() => {
       const auth = getAuth();
-      signInWithEmailAndPassword(auth, email, password)
+      signInWithEmailAndPassword(auth, "dennis@gmail.com", "test123")
         .then((userCredential) => {
-          console.log(userCredential);
+          //console.log(userCredential);
           setIsAuthenticated(true);
         })
         .catch((error) => {
