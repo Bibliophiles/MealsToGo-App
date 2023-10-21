@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
@@ -17,7 +17,7 @@ import { AuthenticationContextProvider } from "./src/services/authentication/aut
 import { Navigation } from "./src/infrastructure/navigation";
 
 import { getApps, initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+// import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -34,20 +34,20 @@ if (!getApps().length) {
 }
 
 export default function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  // const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      const auth = getAuth();
-      signInWithEmailAndPassword(auth, "dennis@gmail.com", "test123")
-        .then((userCredential) => {
-          setIsAuthenticated(true);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }, 2000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     const auth = getAuth();
+  //     signInWithEmailAndPassword(auth, "dennis@gmail.com", "test123")
+  //       .then((userCredential) => {
+  //         setIsAuthenticated(true);
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //       });
+  //   }, 2000);
+  // }, []);
 
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
@@ -61,9 +61,9 @@ export default function App() {
     return null;
   }
 
-  if (!isAuthenticated) {
-    return null;
-  }
+  // if (!isAuthenticated) {
+  //   return null;
+  // }
 
   return (
     <>

@@ -1,10 +1,17 @@
 import { Text } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
+import { Button } from "react-native-paper";
+
+import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 import { SafeArea } from "../../../components/utility/safe-area.component";
+
 export const SettingsScreen = () => {
+  const { onLogout } = useContext(AuthenticationContext);
+
   return (
     <SafeArea>
-      <Text>settings screen</Text>
+      <Text>Settings</Text>
+      <Button title="Logout" onPress={() => onLogout()} />
     </SafeArea>
   );
 };
