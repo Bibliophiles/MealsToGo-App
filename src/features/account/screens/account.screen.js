@@ -16,6 +16,7 @@ import {
 export const AccountScreen = ({ navigation }) => {
   return (
     <AccountBackground>
+      <AccountCover />
       <AnimationWrapper>
         <LottieView
           key="animation"
@@ -25,7 +26,6 @@ export const AccountScreen = ({ navigation }) => {
           source={require("../../../../assets/watermelon.json")}
         />
       </AnimationWrapper>
-      <AccountCover />
 
       <Title>Meals To Dennis</Title>
       <AccountContainer>
