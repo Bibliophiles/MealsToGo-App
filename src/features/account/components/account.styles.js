@@ -16,7 +16,7 @@ export const AccountCover = styled.View`
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
 `;
 
 export const AccountContainer = styled.View`
@@ -51,6 +51,6 @@ export const AnimationWrapper = styled.View`
   position: absolute;
   width: 100%;
   height: 40%;
-  top: 30%;
+  top: 30px;
   padding: ${(props) => props.theme.space[2]};
 `;

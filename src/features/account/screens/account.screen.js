@@ -27,7 +27,7 @@ export const AccountScreen = ({ navigation }) => {
         />
       </AnimationWrapper>
 
-      <Title>Meals To Dennis</Title>
+      <Title>Dennis Eats</Title>
       <AccountContainer>
         <AuthButton
           icon="lock-open-outline"
